@@ -13,6 +13,11 @@
  *
  */
 export default class UserTable {
+  constructor(rows) {
+    this.rows = rows;
+    this.result = this.createTable();
+  }
+  
   createTable() {
     let table = document.createElement('table');
     let thead = document.createElement('thead');
@@ -51,12 +56,6 @@ export default class UserTable {
     table.append(tbody);
     return table;
   }
-
-  constructor(rows) {
-    this.rows = rows;
-    this.result = this.createTable();
-  }
-
 
   get elem() {
     return this.result;
