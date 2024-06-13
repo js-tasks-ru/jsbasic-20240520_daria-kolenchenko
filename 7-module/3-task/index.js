@@ -17,7 +17,7 @@ export default class StepSlider {
       <div class="slider__steps">
       <span class="slider__step-active"></span>
       </div>
-    <div>
+    </div>
     `)
 
     for (let i = 0; i < this.steps - 1; i++){
