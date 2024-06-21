@@ -3,21 +3,21 @@ import createElement from '../../assets/lib/create-element.js';
 export default class Modal {
   constructor() {
     this.modal = this.createModal();
-    this.#closeButton.addEventListener('click', () => this.close());
+    this.closeButton.addEventListener('click', () => this.close());
     document.addEventListener('keydown', (event) => {
       if (event.code === 'Escape') this.close();
   });
   }
 
-  get #closeButton() {
+  get closeButton() {
     return this.modal.querySelector('.modal__close');
   }
 
-  get #modalTitle() {
+  get modalTitle() {
     return this.modal.querySelector('.modal__title');
   }
 
-  get #modalBody() {
+  get modalBody() {
     return this.modal.querySelector('.modal__body');
   }
 
@@ -42,14 +42,14 @@ export default class Modal {
   }
 
   setTitle(title) {
-    this.#modalTitle.textContent = title;
+    this.modalTitle.textContent = title;
   }
 
   setBody(modalBody){
-    for (let elem of this.#modalBody.children) {
+    for (let elem of this.modalBody.children) {
       elem.remove();
     }
-    this.#modalBody.append(modalBody);
+    this.modalBody.append(modalBody);
   }
 
   open(){
