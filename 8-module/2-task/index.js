@@ -49,10 +49,10 @@ export default class ProductGrid {
     this.filters = {...this.filters, ...filters};
 
     const filteredProducts = this.products.filter(product => {
-      if (this.filters.noNuts == true && product.nuts == true) {
+      if (this.filters.noNuts && product.nuts) {
         return false;
       }
-      if (this.filters.vegeterianOnly == true && !product.vegeterian) {
+      if (this.filters.vegeterianOnly && !product.vegeterian) {
         return false;
       }
       if (this.filters.maxSpiciness < product.spiciness) {

@@ -138,7 +138,6 @@ export default class Cart {
     modal.open();
 
     this.modal = modal;
-    // return modal;
   }
 
   onProductUpdate(cartItem) {
@@ -158,7 +157,7 @@ export default class Cart {
 
   async onSubmit(event) {
     event.preventDefault();
-    document.querySelector('button[type="submit"]').classList.add('is-loading');
+    this.modal.modalBody.querySelector('button[type="submit"]').classList.add('is-loading');
     let response = await fetch('https://httpbin.org/post', {
       method: 'POST',
       body: new FormData(document.forms.cartForm)
