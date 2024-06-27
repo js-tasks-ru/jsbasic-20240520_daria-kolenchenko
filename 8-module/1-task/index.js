@@ -56,15 +56,20 @@ export default class CartIcon {
           zIndex: ''
         });
       }
-
-      this.elem.style.position = 'fixed';
-      this.elem.style.top = '50px';
-      this.elem.style.left = leftIndent;
-
+      Object.assign(this.elem.style, {
+        position: 'fixed',
+        top: '50px',
+        zIndex: 1e3,
+        right: '10px',
+        left: leftIndent
+      })
     } else {
-      this.elem.style.position = '';
-      this.elem.style.top = '';
-      this.elem.style.left = '';  
+      Object.assign(this.elem.style, {
+        position: '',
+        top: '',
+        left: '',
+        zIndex: ''
+      })
     }
   }
 }

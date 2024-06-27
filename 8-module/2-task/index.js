@@ -27,7 +27,7 @@ export default class ProductGrid {
   }
 
   createProductItem(product) {
-    return createElement(`
+    let element = createElement(`
       <div class="card">
 
     <div class="card__top">
@@ -43,6 +43,13 @@ export default class ProductGrid {
 
     </div>
   `);
+  element.querySelector('.card__button').onclick = () => {
+    element.dispatchEvent(new CustomEvent("product-add", {
+      detail: product.id,
+      bubbles: true
+    }));
+  }
+  return element;
   }
 
   updateFilter(filters) {
